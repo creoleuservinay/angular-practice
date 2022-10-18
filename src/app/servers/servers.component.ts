@@ -7,8 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
+  isUnchanged = true
+  itemImageUrl = 'https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif'
+  serverCreateStatus = 'No server was created'
+  serverName = 'Test server'
 
-  constructor() { }
+  onServerCreated() {
+    console.log('serverCreateserverCreate')
+     return this.serverCreateStatus = 'Server is created'
+  }
+
+  onUpdateServerName(event: Event) {
+    this.serverName =  (event.target as HTMLInputElement).value;
+  }
+  
+
+  constructor() {
+    setTimeout(() => {
+      this.itemImageUrl = 'https://fakeimg.pl/350x200/ff0000/000'
+      this.isUnchanged = false
+    }, 3000)
+   }
 
   ngOnInit(): void {
   }

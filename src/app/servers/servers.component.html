@@ -1,2 +1,11 @@
 <app-server></app-server>
 <app-server></app-server>
+<!-- <input type="text" (input)="onUpdateServerName($event)"> -->
+<input type="text" [(ngModel)]="serverName">
+
+<button class="btn btn-primary mt-5" [disabled]="isUnchanged" (click)="onServerCreated()">Add new</button>
+<img alt="item" [src]="itemImageUrl">
+<p>Server name is: {{serverName}}</p>
+
+<p>{{ serverCreateStatus }} </p>
+z`

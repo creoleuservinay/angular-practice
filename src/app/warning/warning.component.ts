@@ -7,5 +7,10 @@ import { Component } from "@angular/core";
 })
 
 export class WarningAlert {
+  serverId = 10
+  serverStatus = 'Offline'
 
+  serverDetails() {
+    return this.serverStatus
+  }
 }
