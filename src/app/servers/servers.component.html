@@ -1,11 +1,19 @@
-<app-server></app-server>
-<app-server></app-server>
+<!-- <app-server></app-server>
+<app-server></app-server> -->
 <!-- <input type="text" (input)="onUpdateServerName($event)"> -->
-<input type="text" [(ngModel)]="serverName">
+<!-- <input type="text" [(ngModel)]="serverName"> -->
+<div class="container">
+<div class="row">
+  <div class="col-md-4">
+    <input type="text" [(ngModel)]="userName">
+    <p>{{ userName }}</p>
+    <button class="btn btn-primary" [disabled]="!userName" (click)="userName = ''">Clear</button>
+  </div>
+</div>  
+</div>
 
-<button class="btn btn-primary mt-5" [disabled]="isUnchanged" (click)="onServerCreated()">Add new</button>
+<!-- <button class="btn btn-primary mt-5" [disabled]="isUnchanged" (click)="onServerCreated()">Add new</button>
 <img alt="item" [src]="itemImageUrl">
 <p>Server name is: {{serverName}}</p>
 
-<p>{{ serverCreateStatus }} </p>
-z`
+<p>{{ serverCreateStatus }} </p> -->

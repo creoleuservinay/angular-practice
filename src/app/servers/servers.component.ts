@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
+  userName = ''
   isUnchanged = true
   itemImageUrl = 'https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif'
   serverCreateStatus = 'No server was created'
@@ -19,6 +20,10 @@ export class ServersComponent implements OnInit {
 
   onUpdateServerName(event: Event) {
     this.serverName =  (event.target as HTMLInputElement).value;
+  }
+
+  clearUserName(){
+    this.userName =  '';
   }
   
 
