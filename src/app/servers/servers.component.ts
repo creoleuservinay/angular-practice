@@ -9,13 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   userName = ''
   isUnchanged = true
-  itemImageUrl = 'https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif'
-  serverCreateStatus = 'No server was created'
+  itemImageUrl = ''
+  serverCreateStatus = ''
   serverName = 'Test server'
+  serverCreated = false
 
+  imageManager(operationType){
+    if(operationType == 'add') {
+      this.itemImageUrl = 'https://fakeimg.pl/350x200/ff0000/000'
+    } else {
+      this.itemImageUrl = ''
+    }
+  }
   onServerCreated() {
-    console.log('serverCreateserverCreate')
-     return this.serverCreateStatus = 'Server is created'
+    this.serverCreated = true
+     return this.serverCreateStatus = 'Created'
   }
 
   onUpdateServerName(event: Event) {
@@ -29,7 +37,7 @@ export class ServersComponent implements OnInit {
 
   constructor() {
     setTimeout(() => {
-      this.itemImageUrl = 'https://fakeimg.pl/350x200/ff0000/000'
+      // this.itemImageUrl = 'https://fakeimg.pl/350x200/ff0000/000'
       this.isUnchanged = false
     }, 3000)
    }

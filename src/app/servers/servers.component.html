@@ -1,8 +1,5 @@
-<!-- <app-server></app-server>
-<app-server></app-server> -->
-<!-- <input type="text" (input)="onUpdateServerName($event)"> -->
-<!-- <input type="text" [(ngModel)]="serverName"> -->
-<div class="container">
+
+<!-- <div class="container assiment-2">
 <div class="row">
   <div class="col-md-4">
     <input type="text" [(ngModel)]="userName">
@@ -10,10 +7,24 @@
     <button class="btn btn-primary" [disabled]="!userName" (click)="userName = ''">Clear</button>
   </div>
 </div>  
+</div> -->
+<div class="container other-examples">
+ <app-server></app-server>
+<app-server></app-server> 
+<input type="text" (input)="onUpdateServerName($event)">
 </div>
 
-<!-- <button class="btn btn-primary mt-5" [disabled]="isUnchanged" (click)="onServerCreated()">Add new</button>
-<img alt="item" [src]="itemImageUrl">
-<p>Server name is: {{serverName}}</p>
+<div class="container demodiv">
+  <input type="text" [(ngModel)]="serverName">
+  <label>Server create demo</label>
+<button class="btn btn-primary mt-5" [disabled]="isUnchanged" (click)="onServerCreated()">Add new</button>
+<p *ngIf="serverCreated">Server name is: {{serverName}} and status is {{serverCreateStatus}}</p>
+<p *ngIf="!serverCreated">No server is created</p>
+</div>
 
-<p>{{ serverCreateStatus }} </p> -->
+<div class="container imageurldemo mt-10">
+  <label class="">Image url demo</label>
+  <button class="btn btn-primary mt-5" (click)="imageManager('add')" *ngIf="!itemImageUrl">Get Image</button>
+  <button class="btn btn-primary mt-5" (click)="imageManager('remove')" *ngIf="itemImageUrl">Remove Image</button>
+  <img alt="item" [src]="itemImageUrl" *ngIf="itemImageUrl">
+</div>
