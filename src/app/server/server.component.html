@@ -1,1 +1,2 @@
-<div class="className" [ngStyle]="{backgroundColor: getColor()}">This is server component</div>
+<div class="className" [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{Offline: serverStatus === 'Offline', online: serverStatus === 'online'}">This is server component</div>
+<!-- [] property binding -->

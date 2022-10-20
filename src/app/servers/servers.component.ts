@@ -13,6 +13,7 @@ export class ServersComponent implements OnInit {
   serverCreateStatus = ''
   serverName = 'Test server'
   serverCreated = false
+  servers = ['Server 1', 'server 2']
 
   imageManager(operationType){
     if(operationType == 'add') {
@@ -22,7 +23,7 @@ export class ServersComponent implements OnInit {
     }
   }
   onServerCreated() {
-    this.serverCreated = true
+      this.servers.push(this.serverName)
      return this.serverCreateStatus = 'Created'
   }
 
